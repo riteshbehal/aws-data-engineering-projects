@@ -1,0 +1,19 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ServerlessTrustPolicy",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "emr-serverless.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {
+                "StringLike": {
+                    "aws:SourceArn": "arn:aws:emr-serverless:ap-south-1:463646775279:/applications/00g3di91r5grfl1t",
+                    "aws:SourceAccount": "463646775279"
+                }
+            }
+        }
+    ]
+}
