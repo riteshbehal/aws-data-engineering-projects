@@ -33,8 +33,8 @@
           "KeepJobFlowAliveWhenNoSteps": true,
           "TerminationProtected": false
         },
-        "JobFlowRole": "emr-ec2-custom-role",
-        "ServiceRole": "emr-custom-service-role",
+        "JobFlowRole": "emr_custom_roleforec2",
+        "ServiceRole": "emr-custom-servicerole1",
         "VisibleToAllUsers": true
       },
       "ResultPath": "$.EMRClusterOutput",
@@ -54,7 +54,7 @@
               "spark-submit",
               "--deploy-mode",
               "cluster",
-              "s3://ab-aws-de-labs/spark-scripts/spark-agg1.py"
+              "s3://awsdatafactory1/spark-scripts/spark-agg1.py"
             ]
           }
         }
@@ -82,7 +82,7 @@
               "spark-submit",
               "--deploy-mode",
               "cluster",
-              "s3://ab-aws-de-labs/spark-scripts/spark-agg2.py"
+              "s3://awsdatafactory1/spark-scripts/spark-agg2.py"
             ]
           }
         }

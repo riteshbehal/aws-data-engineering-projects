@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
 # S3 Bucket and Prefixes
-s3_bucket = 'ab-aws-de-labs'
+s3_bucket = 'awsdatafactory1'
 
 folders = {
     'orders': 'ecommerce-data/new/orders',
