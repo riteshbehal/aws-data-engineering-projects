@@ -32,7 +32,12 @@ except Exception as e:
 try:
     # Join datasets with explicit renaming to avoid column confusion
     logger.info("Joining datasets")
-    df = orders.merge(order_items, on="order_id", how='inner', suffixes=('_order', '_item'))
+    df = orders.merge(
+    order_items,
+    left_on="id",
+    right_on="order_id",
+    how="inner",
+    suffixes=('_order', '_item'))
     df = df.merge(products, left_on="product_id", right_on="id", how='inner', suffixes=('', '_product'))
 
     # Resolve any column name conflicts
