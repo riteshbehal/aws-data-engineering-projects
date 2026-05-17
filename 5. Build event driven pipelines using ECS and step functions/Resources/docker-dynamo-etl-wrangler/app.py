@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger()
 
 # Define S3 paths for the data
-base_path = "s3://ecommerce-data/ecommerce-data/"
+base_path = "s3://awsdatafactory1/ecommerce-data/"
 orders_path = f"{base_path}orders/"
 order_items_path = f"{base_path}order_items/"
 products_path = f"{base_path}products/"
@@ -144,9 +144,9 @@ s3_client = boto3.client('s3')
 def move_s3_files(source_path, archive_path):
     """Move files from source to archive folder in S3."""
     s3_client = boto3.client('s3')
-    bucket = 'ecommerce-data'
-    source_prefix = source_path.replace("s3://ecommerce-data/", "")
-    archive_prefix = archive_path.replace("s3://ecommerce-data/", "")
+    bucket = 'awsdatafactory1'
+    source_prefix = source_path.replace("s3://awsdatafactory1/", "")
+    archive_prefix = archive_path.replace("s3://awsdatafactory1/", "")
 
     try:
         response = s3_client.list_objects_v2(Bucket=bucket, Prefix=source_prefix)
