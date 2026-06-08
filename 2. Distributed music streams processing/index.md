@@ -183,22 +183,6 @@ listen_time
 
 ---
 
-# Running Locally
-
-AWS provides a Glue Docker image that can be used for local development.
-
-Run:
-
-```bash
-chmod +x local-docker-development.sh
-./local-docker-development.sh
-```
-
-This launches a Glue Spark container and executes:
-
-```bash
-glue-pyspark.py
-```
 
 ---
 
