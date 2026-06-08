@@ -136,8 +136,8 @@ Incoming Music Stream Files
 ```text
 Distributed music streams processing/
 │
-│── Lab_Deploy_Spark_and_Python_Jobs_on_AWS_Glue.pdf
-│── Lab_Orchestrate_AWS_Glue_Jobs_Using_Apache_Airflow.pdf
+│── Lab_1_Deploy_Spark_and_Python_Jobs_on_AWS_Glue.pdf
+│── Lab_2_Orchestrate_AWS_Glue_Jobs_Using_Apache_Airflow.pdf
 │
 ├── resources/
 │   ├── dag-glue-workflow.py
@@ -151,9 +151,6 @@ Distributed music streams processing/
 │
 └── index.md
 ```
-
----
-
 # Input Datasets
 
 ### songs.csv
@@ -180,95 +177,6 @@ user_id
 track_id
 listen_time
 ```
-
----
-
-
----
-
-# AWS Deployment
-
-## Create IAM Role
-
-Required Permissions:
-
-```text
-AmazonS3FullAccess
-AmazonDynamoDBFullAccess
-CloudWatchEventsFullAccess
-```
-
----
-
-## Create AWS Glue Jobs
-
-### Job 1
-
-```text
-calculate_metrics_etl
-```
-
-Type:
-
-```text
-Spark
-```
-
-Glue Version:
-
-```text
-Glue 4.0
-```
-
-Workers:
-
-```text
-2
-```
-
----
-
-### Job 2
-
-```text
-insert_metrics_dynamo
-```
-
-Type:
-
-```text
-Python Shell
-```
-
-DPU:
-
-```text
-1/16 DPU
-```
-
----
-
-## Create DynamoDB Table
-
-```text
-track_level_reports
-```
-
-Partition Key:
-
-```text
-track_id
-```
-
-Sort Key:
-
-```text
-report_date
-```
-
----
-
-## Deploy Airflow DAG
 
 Upload:
 
