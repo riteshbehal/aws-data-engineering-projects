@@ -154,6 +154,18 @@ Stores final business metrics for reporting and analytics.
 - `IncrementalLoadConfigurations`
 
 ---
+## Services Overview
+- Amazon Aurora MySQL – The source database. This is where the original rental apartment data is stored.
+- Amazon S3 – The storage bucket. Data is first saved here in files before being loaded into Redshift.
+- AWS Glue – The ETL service. It runs the jobs that extract, move, and transform data.
+- AWS Glue Python Shell – A lighter Glue job type used for small scripts like extraction or loading data into Redshift.
+- Amazon Redshift – The data warehouse. It stores cleaned and organized data for reporting and analytics.
+- AWS Step Functions – The workflow manager. It runs the Glue jobs one after another in the correct order.
+- Amazon EventBridge – The scheduler. It starts the whole workflow automatically at fixed intervals.
+- AWS Secrets Manager – Stores database usernames and passwords safely.
+- IAM – Controls permissions. It decides which AWS services can access others.
+- Amazon CloudWatch – Logs and monitoring. It helps you see whether jobs ran successfully or failed.
+- DynamoDB – A fast NoSQL database used here to track incremental load settings.
 
 ## Learning Outcomes
 
