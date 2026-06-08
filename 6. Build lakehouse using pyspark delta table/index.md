@@ -87,34 +87,6 @@ Amazon Redshift (Optional Access Layer)
 
 ---
 
-## Project Structure
-
-```text
-build-lakehouse-using-delta-lake/
-├── Lab_1_Build_a_Lakehouse_for_E-commerce_Transactions_using_Delta_Lake_on_AWS.pdf
-│
-├── Resources/
-│   │
-│   ├── data/
-│   │   ├── products.csv
-│   │   ├── orders_2024-06-06.csv
-│   │   ├── orders_2024-06-06-Updated.csv
-│   │   ├── orders_2024-06-07.csv
-│   │   ├── order_items_2024-06-06.csv
-│   │   └── order_items_2024-06-07.csv
-│   │
-│   ├── jars/
-│   │   └── delta-core_2.12-1.0.0.jar
-│   │
-│   ├── spark-transactional-delta-lake.py
-│   ├── local-docker-development.sh
-│   └── Dockerfile
-│
-└── index.md
-```
-
----
-
 ## Input Datasets
 
 ### Products Dataset

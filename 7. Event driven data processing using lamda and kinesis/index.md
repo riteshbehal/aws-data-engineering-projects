@@ -90,25 +90,7 @@ Aggregated Metrics
    Amazon S3
 ```
 
-## Project Structure
-```text
-event-driven-trip-processing-pipeline/
-│
-├── Lab_1_Event-Driven_Trip_Processing_Pipeline_using_AWS_Kinesis_Lambda_DynamoDB_and_Glue.pdf
-│
-├── Resources/
-│   │
-│   ├── data/
-│   │   ├── trip_start.csv
-│   │   └── trip_end.csv
-│   │
-│   ├── glue-process-data.py
-│   ├── kinesis-trips-producer.py
-│   ├── lambda-trip-start.py
-│   └── lambda-trip-end-with-glue.py
-│
-└── index.md
-```
+---
 
 ## Input Datasets
 

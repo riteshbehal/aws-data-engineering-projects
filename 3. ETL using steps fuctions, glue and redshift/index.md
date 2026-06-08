@@ -66,34 +66,6 @@ AWS Step Functions
 Amazon EventBridge
 ```
 
-# Project Structure
-
-```text
-AWS-Rental-Apartments-Data-Warehouse/
-│
-├── Lab_1_Setup_Amazon_Aurora_MySQL_and_Load_Rental_Data.pdf
-├── Lab_2_Extract_Data_from_Aurora_MySQL_Using_AWS_Glue_Python_Shell.pdf
-├── Lab_3_Ingest_Extracted_Data_into_Amazon_Redshift_Raw_Layer_Using_AWS_Glue.pdf
-├── Lab_4_Redshift_Process_Layer_Ingestion_using_AWS_Glue_(Star_Schema_Load).pdf
-├── Lab_5_Data_Orchestration_using_AWS_Step_Functions_(State_Machine_for_Batch_Pipeline).pdf
-├── Lab_6_Schedule_Step_Functions_Using_Amazon_EventBridge.pdf
-│
-├── Resources/
-│   ├── apartment_attributes.csv
-│   ├── mysql-extraction.py
-│   ├── mysql-queries.sql
-│   ├── redshift-copy-commands.sql
-│   ├── redshift-create-tables copy.sql
-│   ├── redshift-create-tables.sql
-│   ├── redshift-processed-layer.py
-│   ├── redshift-raw-ingestion.py
-│   ├── step-functions.json
-│   ├── user_viewings.csv
-│   └── write-to-dynamo.py
-│
-└── index.md
-```
-
 ---
 
 ## Key Components
@@ -154,6 +126,7 @@ Stores final business metrics for reporting and analytics.
 - `IncrementalLoadConfigurations`
 
 ---
+
 ## Services Overview
 - Amazon Aurora MySQL – The source database. This is where the original rental apartment data is stored.
 - Amazon S3 – The storage bucket. Data is first saved here in files before being loaded into Redshift.

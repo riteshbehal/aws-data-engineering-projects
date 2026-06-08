@@ -131,28 +131,6 @@ Raw Datasets
  AWS Step Functions
 ```
 
-# Project Structure
-
-```text
-4. Build data lake using  EMR, S3 and Athena/
-│
-│── Lab_1_Big_Data_Processing_using_EMR_Spark_Athena_Step_Functions.pdf
-│
-├── resources/
-│   ├── emr-serverless-trust-policy.json
-│   ├── execution-policy-step-functions.json
-│   ├── local-docker-development.sh
-│   ├── locations.csv
-│   ├── rental_transactions.csv
-│   ├── spark-agg1.py
-│   ├── spark-agg2.py
-│   ├── step-functions-emr.json
-│   ├── users.csv
-│   └── vehicles.csv
-│
-└── index.md
-```
-
 ---
 
 ## Services Overview 

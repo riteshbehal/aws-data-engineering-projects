@@ -131,26 +131,8 @@ Incoming Music Stream Files
      Archive Raw Files
 ```
 
-# Project Structure
+---
 
-```text
-Distributed music streams processing/
-│
-│── Lab_1_Deploy_Spark_and_Python_Jobs_on_AWS_Glue.pdf
-│── Lab_2_Orchestrate_AWS_Glue_Jobs_Using_Apache_Airflow.pdf
-│
-├── resources/
-│   ├── dag-glue-workflow.py
-│   ├── glue-dynamo.py
-│   ├── glue-pyspark.py
-│   ├── local-docker-development.sh
-│   ├── songs.csv
-│   ├── streams1.csv
-│   ├── streams2.csv
-│   ├── users.csv
-│
-└── index.md
-```
 # Input Datasets
 
 ### songs.csv
