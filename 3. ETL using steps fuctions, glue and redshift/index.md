@@ -1,0 +1,176 @@
+# AWS Rental Apartments Data Pipeline
+
+## Overview
+
+This project demonstrates an end-to-end AWS batch data pipeline for a rental apartment analytics use case.
+
+The workflow extracts data from Amazon Aurora MySQL, stages it in Amazon S3, loads it into Amazon Redshift, transforms it into a star-schema process layer, and orchestrates the full pipeline with AWS Step Functions and Amazon EventBridge.
+
+---
+
+## Project Flow
+
+### 1. Set up Aurora MySQL
+- Create the source database
+- Load rental apartment data
+
+### 2. Extract data to S3
+- Use a Glue Python Shell job
+- Support full and incremental loads
+- Store extracted files in S3
+
+### 3. Load Redshift raw layer
+- Create Redshift database and raw schema
+- Copy extracted data into the raw zone
+
+### 4. Build the curated layer
+- Create the process schema
+- Load dimensional and fact tables
+- Apply star schema modeling
+
+### 5. Build the presentation layer
+- Create reporting tables
+- Store final business metrics
+
+### 6. Orchestrate the workflow
+- Use Step Functions to run all Glue jobs in sequence
+
+### 7. Schedule the workflow
+- Use EventBridge to run the pipeline automatically
+
+---
+
+## Architecture
+
+```text
+Aurora MySQL
+   ↓
+AWS Glue Python Shell
+   ↓
+Amazon S3
+   ↓
+AWS Glue Python Shell
+   ↓
+Amazon Redshift Raw Layer
+   ↓
+AWS Glue Python Shell
+   ↓
+Amazon Redshift Curated Layer
+   ↓
+AWS Glue Python Shell
+   ↓
+Amazon Redshift Presentation Layer
+   ↓
+AWS Step Functions
+   ↓
+Amazon EventBridge
+```
+
+# Project Structure
+
+```text
+AWS-Rental-Apartments-Data-Warehouse/
+│
+├── Lab_1_Setup_Amazon_Aurora_MySQL_and_Load_Rental_Data.pdf
+├── Lab_2_Extract_Data_from_Aurora_MySQL_Using_AWS_Glue_Python_Shell.pdf
+├── Lab_3_Ingest_Extracted_Data_into_Amazon_Redshift_Raw_Layer_Using_AWS_Glue.pdf
+├── Lab_4_Redshift_Process_Layer_Ingestion_using_AWS_Glue_(Star_Schema_Load).pdf
+├── Lab_5_Data_Orchestration_using_AWS_Step_Functions_(State_Machine_for_Batch_Pipeline).pdf
+├── Lab_6_Schedule_Step_Functions_Using_Amazon_EventBridge.pdf
+│
+├── Resources/
+│   ├── apartment_attributes.csv
+│   ├── mysql-extraction.py
+│   ├── mysql-queries.sql
+│   ├── redshift-copy-commands.sql
+│   ├── redshift-create-tables copy.sql
+│   ├── redshift-create-tables.sql
+│   ├── redshift-processed-layer.py
+│   ├── redshift-raw-ingestion.py
+│   ├── step-functions.json
+│   ├── user_viewings.csv
+│   └── write-to-dynamo.py
+│
+└── index.md
+```
+
+---
+
+## Key Components
+
+### Source Layer
+- Amazon Aurora MySQL
+
+### Landing Layer
+- Amazon S3
+
+### Warehouse Layer
+- Amazon Redshift
+
+### Orchestration
+- AWS Step Functions
+- Amazon EventBridge
+
+### Supporting Services
+- AWS Glue
+- AWS Secrets Manager
+- IAM
+- DynamoDB
+- CloudWatch Logs
+
+---
+
+## Main Data Layers
+
+### Raw Layer
+Stores source data in its original form.
+
+### Curated Layer
+Applies data modeling and warehouse transformations.
+
+### Presentation Layer
+Stores final business metrics for reporting and analytics.
+
+---
+
+## Main Tables
+
+### Aurora MySQL
+- `apartments`
+- `apartment_attributes`
+- `apartment_viewings`
+
+### Redshift Raw Layer
+- `raw_zone.apartments`
+- `raw_zone.apartment_attributes`
+- `raw_zone.apartment_viewings`
+
+### Redshift Process Layer
+- `process_zone.dim_apartments`
+- `process_zone.dim_users`
+- `process_zone.fact_apartment_viewings`
+
+### DynamoDB
+- `IncrementalLoadConfigurations`
+
+---
+
+## Learning Outcomes
+
+After completing this project, you will understand how to:
+
+- build a cloud data warehouse pipeline on AWS
+- extract data from Aurora MySQL
+- stage data in Amazon S3
+- load data into Redshift
+- design raw, curated, and presentation layers
+- automate jobs with Step Functions
+- schedule workflows with EventBridge
+- keep the pipeline simple and cost effective
+
+---
+
+## Project Result
+
+By the end of the project, rental apartment data moves from the operational database into a fully automated AWS data warehouse pipeline that is ready for reporting and analytics.
+
